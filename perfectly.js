@@ -15,7 +15,7 @@ function getSVGOptions() {
 }
 
 /** Returns the options to be used for the generated files.
-	@return ExportOptionsSVG object
+	@return ExportOptionsJPEG object
 */
 function getJPEGOptions() {
     var options = new ExportOptionsJPEG();
@@ -25,7 +25,7 @@ function getJPEGOptions() {
 }
 
 /** Returns the options to be used for the generated files.
-	@return ExportOptionsSVG object
+	@return ExportOptionsPhotoshop object
 */
 function getPSDOptions() {
     var options = new ExportOptionsPhotoshop();
@@ -37,7 +37,7 @@ function getPSDOptions() {
 }
 
 /** Returns the options to be used for the generated files.
-	@return ExportOptionsSVG object
+	@return ExportOptionsAutoCAD object
 */
 function getDxfOptions() {
     var options = new ExportOptionsAutoCAD();
@@ -49,7 +49,7 @@ function getDxfOptions() {
 }
 
 /** Returns the options to be used for the generated files.
-	@return ExportOptionsSVG object
+	@return EPSSaveOptions object
 */
 function getEpsOptions() {
     var options = new EPSSaveOptions();
@@ -59,7 +59,7 @@ function getEpsOptions() {
 }
 
 /** Returns the options to be used for the generated files.
-	@return PDFSaveOptions object
+	@return IllustratorSaveOptions object
 */
 function getAiOptions() {
     var options = new IllustratorSaveOptions();
@@ -69,7 +69,7 @@ function getAiOptions() {
 }
 
 /** Returns the options to be used for the generated files.
-	@return PDFSaveOptions object
+	@return ExportOptionsPNG24 object
 */
 function getPNG24Options() {
     var options = new ExportOptionsPNG24();
@@ -84,7 +84,10 @@ try {
     if (app.documents.length > 0) {
         // Get the folder to save the files into
         var rootFolder = null;
-        rootFolder = Folder.selectDialog("Select folder for PDF files.", "~");
+        rootFolder = Folder.selectDialog(
+            "Select root folder to save your files into. Each open window will be saved in a different folder.",
+            "~",
+        );
 
         if (rootFolder != null) {
             var options, i, sourceDoc, targetFile;
