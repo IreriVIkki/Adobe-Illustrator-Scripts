@@ -6,14 +6,14 @@ You can choose to export in only one format at a time from either of the followi
 
 __formats__
 
-    .pdf
-    .svg
-    .jpg
-    .png
+    .eps
     .ai
     .psd
+    .svg
+    .png
+    .pdf
+    .jpg
     .dxf
-    .eps
 
 **How to use**
 
