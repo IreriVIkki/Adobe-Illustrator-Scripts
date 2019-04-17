@@ -39,7 +39,7 @@ function getPSDOptions() {
 /** Returns the options to be used for the generated files.
 	@return ExportOptionsAutoCAD object
 */
-function getDxfOptions() {
+function getDXFOptions() {
     var options = new ExportOptionsAutoCAD();
     options.version = AutoCADCompatibility.AutoCADRelease14;
     options.exportSelectedArtOnly = false;
@@ -195,7 +195,7 @@ try {
                 }
 
                 try {
-                    options = this.getDxfOptions();
+                    options = this.getDXFOptions();
                     targetFile = this.getTargetFile(
                         sourceDoc.name,
                         ".dxf",
