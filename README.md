@@ -7,11 +7,11 @@ You can choose to export in only one format at a time from either of the followi
 __formats__
 
     .pdf
-    .png
-    .ai
     .svg
     .jpg
-    .asd
+    .png
+    .ai
+    .psd
     .dxf
     .eps
 
