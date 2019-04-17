@@ -61,7 +61,7 @@ function getEPSOptions() {
 /** Returns the options to be used for the generated files.
 	@return IllustratorSaveOptions object
 */
-function getAiOptions() {
+function getAIOptions() {
     var options = new IllustratorSaveOptions();
     options.compatibility = Compatibility.ILLUSTRATOR8;
     options.flattenOutput = OutputFlattening.PRESERVEAPPEARANCE;
@@ -131,7 +131,7 @@ try {
                 }
 
                 try {
-                    options = this.getAiOptions();
+                    options = this.getAIOptions();
                     targetFile = this.getTargetFile(
                         sourceDoc.name,
                         ".ai",
