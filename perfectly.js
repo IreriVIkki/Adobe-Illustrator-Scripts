@@ -51,7 +51,7 @@ function getDXFOptions() {
 /** Returns the options to be used for the generated files.
 	@return EPSSaveOptions object
 */
-function getEpsOptions() {
+function getEPSOptions() {
     var options = new EPSSaveOptions();
     options.includeDocumentThumbnails = true;
     options.saveMultipleArtboards = false;
@@ -119,7 +119,7 @@ try {
                 }
 
                 try {
-                    options = this.getEpsOptions();
+                    options = this.getEPSOptions();
                     targetFile = this.getTargetFile(
                         sourceDoc.name,
                         ".eps",
