@@ -1,8 +1,10 @@
 /** Returns the options to be used for the generated files.
-	@return ExportOptionsSVG object
+	@return ExportOptionsJPEG object
 */
-function getSVGOptions() {
-    var options = new ExportOptionsSVG();
+function getJPEGOptions() {
+    var options = new ExportOptionsJPEG();
+    options.antiAliasing = false;
+    options.qualitySetting = 70;
     return options;
 }
 
@@ -13,14 +15,14 @@ try {
         // Get the folder to save the files into
         var rootFolder = null;
         rootFolder = Folder.selectDialog(
-            "Select root folder to save SVG files.",
+            "Select root folder to save JPG files.",
             "~",
         );
 
         if (rootFolder != null) {
             var options, i, sourceDoc, targetFile;
 
-            // You can tune these by changing the code in the getPDFOptions() function.
+            // You can tune these by changing the code in the getJPGOptions() function.
 
             for (i = 0; i < app.documents.length; i++) {
                 sourceDoc = app.documents[i]; // returns the document object
@@ -33,21 +35,22 @@ try {
                 );
 
                 if (!destFolder.exists) destFolder.create();
+
                 try {
-                    options = this.getSVGOptions();
+                    options = this.getJPEGOptions();
                     targetFile = this.getTargetFile(
                         sourceDoc.name,
-                        ".svg",
+                        ".jpg",
                         destFolder,
                     );
-                    sourceDoc.exportFile(targetFile, ExportType.SVG, options);
+                    sourceDoc.exportFile(targetFile, ExportType.JPEG, options);
                 } catch (error) {
                     throw error;
                 }
 
                 sourceDoc.save(sourceDoc.fullName);
             }
-            alert("Documents saved in SVG format");
+            alert("Documents saved in JPG format");
         }
     } else {
         throw new Error("There are no document open!");
